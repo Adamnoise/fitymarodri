@@ -8,6 +8,29 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: ["__tests__/setup.ts"],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      exclude: [
+        'node_modules/',
+        '.next/',
+        'coverage/',
+        '**/*.d.ts',
+        '**/*.config.*',
+        '__tests__/setup.ts',
+        'components/ui/**', // shadcn/ui components are already tested
+      ],
+      threshold: {
+        global: {
+          branches: 70,
+          functions: 70,
+          lines: 70,
+          statements: 70
+        }
+      }
+    },
+    testTimeout: 10000,
+    hookTimeout: 10000,
   },
   resolve: {
     alias: {
