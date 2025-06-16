@@ -6,7 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest --watch",
+    "clean": "rm -rf .next dist coverage",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
